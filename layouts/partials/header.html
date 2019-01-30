@@ -9,4 +9,12 @@
 {{ with .Site.Params.description }}
 <p class="description">{{ . }}</p>
 {{end}}
+
+<div style="float:right;line-height:40px;">
+{{ if .IsTranslated }}
+{{ range .Translations }}
+<a href="{{ .Permalink }}">{{ .Site.Language.LanguageName }}</a>
+{{ end }}
+{{ end }}
+</div>
 </header>
